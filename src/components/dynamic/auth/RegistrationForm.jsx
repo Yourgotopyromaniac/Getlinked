@@ -15,7 +15,7 @@ const RegistrationForm = () => {
 
     const [regLoading, setRegLoading] = useState(false)
     const [categoriesLoading, setCategoriesLoading] = useState(false)
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const handleModalClose = () => {
         setIsModalOpen(false)
     }
