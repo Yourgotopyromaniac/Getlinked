@@ -14,6 +14,8 @@ This readme contains everything you need to know about my development process, m
 
 
 
+
+
 ## 1.0 Designer Requests
 
 Going through the figma file, I noticed the designer put several comments in different sections of the page, requesting certain animations, this would have been easy to miss and would even be difficult to implement in such a short timeframe, but I didn't falter, I implemented all of these animations and more as requested by the designer; 
