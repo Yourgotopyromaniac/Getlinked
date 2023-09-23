@@ -35,7 +35,7 @@ const Contact = () => {
                         <p className='hidden lg:flex'>Call Us : 07067981819</p>
                         <p className='w-[70%] hidden lg:flex'>we are open from Monday-Friday 08:00am - 05:00pm</p>
 
-                        <div className='flex flex-col gap-2 items-center lg:items-start lg:relative fixed bottom-[5%] left-[50%] transform -translate-x-1/2'>
+                        <div className='flex flex-col gap-2 items-center lg:items-start lg:relative lg:left-20  fixed bottom-[5%] left-[50%] transform -translate-x-1/2'>
                             <p className='text-montserrat text-[16px] text-[#D434FE]'>Share on</p>
                             <div className='flex gap-6 font-normal items-center'>
                                 <Image alt="decoration icon" src={insta} />

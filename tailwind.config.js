@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'unica' : ['Unica One', 'sans-serif']
+        'unica' : ['Unica One', 'sans-serif'],
+        'inter' : ['Inter Variable', 'sans-serif'],
       }
     },
   },

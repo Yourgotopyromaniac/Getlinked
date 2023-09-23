@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.0.8",
     "@fontsource/unica-one": "^5.0.12",
     "autoprefixer": "10.4.15",
     "axios": "^1.5.0",

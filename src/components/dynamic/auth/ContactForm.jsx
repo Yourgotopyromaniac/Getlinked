@@ -60,6 +60,7 @@ const ContactForm = () => {
             });
         } catch (error) {
             alert("could not submit your form, please try again")
+            setSendLoading(false);
         }
     };
 
@@ -85,9 +86,9 @@ const ContactForm = () => {
             />
 
             <input
-                type="number"
+                type="tel"
                 name="phone_number"
-                placeholder="Mail"
+                placeholder="number"
                 value={formData.phone_number}
                 onChange={handleInputChange}
                 className="input-bg p-6 pl-2 w-full h-12"
@@ -102,18 +103,15 @@ const ContactForm = () => {
                 className="input-bg p-6 pb-28 pl-2 w-full h-12"
             />
 
-            <select className='text-white bg-[#150E28]'>
-                <option value="1">hiooooooo</option>
-            </select>
-
 
             <div className='lg:w-44 lg:h-14 w-24 h-8 rounded-[4px] font-montserrat text-[12px] lg:text-[16px] button-gradient flex justify-center items-center'>
                 <motion.button type="submit" onClick={handleSubmit} whileHover={{ backgroundColor: '#150e28' }} style={{ backgroundColor: 'transparent' }} className='lg:w-[10.8rem] lg:h-[3.3rem] w-[94px] h-[30px] rounded-[4px] transition-all duration-500 delay-100' >submit</motion.button>
             </div>
+            {sendLoading && (<span>sending, please wait...</span>)}
 
             {isModalOpen && (<div onClick={handleModalClose} className='fixed z-[1500] top-0 left-0 w-screen h-screen flex items-center bg-[#150E28ED]  justify-center'>
                 <div className='border border-[#D434FE] relative z-[1501] text-center bg-transparent flex flex-col items-center py-14 gap-4 w-[80%] lg:w-[50%]'>
-                    <div className='relative flex items-center w-full mb-8'>
+                    <div className='relative flex items-center w-full lg:w-[60%] mb-8'>
                         <Image src={checkmark} alt='modal success' width={200} />
                         <Image src={modalsuccess} className='absolute right-0' alt='modal success' width={300} />
                     </div>

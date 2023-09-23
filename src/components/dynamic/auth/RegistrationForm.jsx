@@ -13,7 +13,9 @@ import starpurple from '@/assets/starpurple.png'
 
 const RegistrationForm = () => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [regLoading, setRegLoading] = useState(false)
+    const [categoriesLoading, setCategoriesLoading] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(true);
     const handleModalClose = () => {
         setIsModalOpen(false)
     }
@@ -43,9 +45,11 @@ const RegistrationForm = () => {
                 })
                 .then((response) => {
                     setCategories(response.data)
+                    setCategoriesLoading(false)
                 })
                 .catch((error) => {
                     console.error("Error fetching data:", error);
+                    setCategoriesLoading(false)
                 });
         };
 
@@ -69,6 +73,7 @@ const RegistrationForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setRegLoading(true);
 
         const registrationUrl = `${process.env.NEXT_PUBLIC_BASE_URL}hackathon/registration`;
         axios
@@ -80,9 +85,11 @@ const RegistrationForm = () => {
             .then((response) => {
                 console.log(response);
                 setIsModalOpen(true)
+                setRegLoading(false);
             })
             .catch((error) => {
                 console.error("Error Registering User:", error);
+                setRegLoading(false)
             });
     }
 
@@ -106,7 +113,7 @@ const RegistrationForm = () => {
             <div className="flex flex-col items-start gap-3">
                 <label>Phone</label>
                 <input
-                    type="text"
+                    type="number"
                     name="phone_number"
                     value={userData.phone_number}
                     onChange={handleInputChange}
@@ -118,7 +125,7 @@ const RegistrationForm = () => {
             <div className="flex flex-col items-start gap-3">
                 <label>Email</label>
                 <input
-                    type="tel"
+                    type="text"
                     name="email"
                     value={userData.email}
                     onChange={handleInputChange}
@@ -143,6 +150,7 @@ const RegistrationForm = () => {
             <div className='w-72 lg:w-[520px] flex flex-row items-end justify-between'>
                 <div className="flex flex-col items-start gap-5">
                     <label>Category</label>
+                    {categoriesLoading && (<span className='text-[10px]'>Loading categories...</span>)}
                     <Suspense fallback={<div>Loading categories...</div>}>
                         <select
                             name="category"
@@ -162,6 +170,7 @@ const RegistrationForm = () => {
 
                         </select>
                     </Suspense>
+                    
 
                 </div>
 
@@ -214,10 +223,11 @@ const RegistrationForm = () => {
                     Register Now
                 </motion.button>
             </div>
+            {regLoading && (<span>You are being registered, please wait...</span>)}
 
-            {isModalOpen && (<div onClick={handleModalClose} className='fixed z-[1500] top-0 left-0 w-screen h-screen flex items-center bg-[#150E28ED]  justify-center'>
+            {isModalOpen && (<div onClick={handleModalClose} className='fixed z-[1000] top-0 left-0 w-screen h-screen flex items-center bg-[#150E28ED]  justify-center'>
                 <div className='border border-[#D434FE] relative z-[1501] text-center bg-transparent flex flex-col items-center py-10 gap-4 w-[80%] lg:w-[50%]'>
-                    <div className='relative flex items-center w-full mb-8'>
+                    <div className='relative flex items-center w-full lg:w-[60%] mb-8'>
                         <Image src={checkmark} alt='modal success' width={200} />
                         <Image src={modalsuccess} className='absolute right-0' alt='modal success' width={300} />
                     </div>
