@@ -10,7 +10,7 @@ This readme contains everything you need to know about my development process, m
 ### 1.0 Designer Requests
 ### 2.0 Key Features and Optimization
 ### 3.0 Pixel Perfection
-### 4.0 Component Documentation
+### 4.0 Custom Component Documentation
 
 
 
@@ -35,7 +35,7 @@ I've avoided this by optimizing these images, converting them from PNG to WebP, 
 Accessibility improvements were also made, with alt texts for description on all images.
 
 
-## 3.0 Pixel-perfection
+## 3.0 Pixel Perfection
 Notice anything different when going through my solution side-by-side with the figma file, No? Me neither 😁.
 
 I've made sure to follow every dimension and specification in the figma file to the T while converting to code.🔍
@@ -44,7 +44,7 @@ A minor detail a lot of people might have missed, on the prizes and rewards sect
 
 Another element I paid particular attention to in conversion from design to code is the hamburger button on mobile, rather than just using two images and having them abruptly transition between each other, I created a standalone element with smooth and slick animations between the two menu states.
 
-## 4.0 Custom component Documentation.
+## 4.0 Custom Component Documentation.
 I like to add these cause as important as user-experience is, Developer experience should also receive just as much attention.
 
 I've made use of only 1 Custom and resusable component in this application which is the CustomButton component, it accepts the following props :
@@ -55,6 +55,6 @@ Now the button can be used anywhere by simply calling CustomButton and passing i
 
 
 ## 5.0 Conclusion
-If you've made it this far as a judge, Thank you for your time and dedication and for the opportunity to participate in this competition. I hope you have been able to see just how much dedication I've put into it and I really hope I come out on top as a new laptop or funds to purchase one would be of great use as I have none right now.
+If you've read this far down as a judge, Thank you for your time and dedication and for the opportunity to participate in this competition. I hope you have been able to see just how much dedication I've put into it and I really hope I come out on top as a new laptop or funds to purchase one would be of great use as I have none right now.
 
-###Thank you for reading 
+### Thank you for reading 
